@@ -1,33 +1,29 @@
 package com.amititme68.company;
 
-public class TouristTicket {
+public class TouristTicket extends Ticket {
 
-    String pnr, from, to, departureDateTime, arrivalDateTime, seatNumber;
-    float price;
-    boolean isCancelled;
-    String hotelAddress;
+    private String hotelAddress;
+    //private String[] selectedTouristLocation;
 
-    public TouristTicket(String pnr,String from,String to,String departureDateTime,String arrivalDateTime,
-                         String seatNumber,float price,boolean isCancelled,String hotelAddress) {
-        this.pnr = pnr;
-        this.from = from;
-        this.to = to;
-        this.departureDateTime = departureDateTime;
-        this.arrivalDateTime = arrivalDateTime;
-        this.seatNumber = seatNumber;
-        this.price = price;
-        this.isCancelled = isCancelled;
+
+    public TouristTicket(String pnr,String from,String to,Flight flight,String departureDateTime,
+                         String arrivalDateTime, Passenger passenger, String seatNumber,
+                         float price,boolean isCancelled,String hotelAddress) {
+        super(pnr, from, to, flight, departureDateTime, arrivalDateTime, passenger, seatNumber, price, isCancelled);
         this.hotelAddress = hotelAddress;
+       // this.selectedTouristLocation=selectedTouristLocation;
     }
 
     public String checkStatus() {
-        if (isCancelled) {
+        if (getIsCancelled()) {
             return "Cancelled";
         } else {
             return "Confirmed";
         }
     }
-
+    public void setHotelAddress(String hotelAddress){
+        this.hotelAddress = hotelAddress;
+    }
     public String getHotelAddress() {
         return this.hotelAddress;
     }
@@ -35,9 +31,7 @@ public class TouristTicket {
     public int getFlightDuration(){
         return 24;
     }
-    public void cancel(){
-        isCancelled =true;
-    }
+    // public void cancel(){isCancelled;}
 
 
 

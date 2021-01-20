@@ -1,27 +1,19 @@
 package com.amititme68.company;
 
-public class RegularTicket {
-    String specialServices;
+public class RegularTicket extends Ticket{
+   private String specialServices;
 
-    String pnr, from, to, departureDateTime, arrivalDateTime, seatNumber;
-    float price;
-    boolean isCancelled;
 
-    public RegularTicket(String pnr,String from,String to,String departureDateTime,String arrivalDateTime,
-                  String seatNumber,float price,boolean isCancelled,String specialServices) {
-        this.pnr = pnr;
-        this.from = from;
-        this.to = to;
-        this.departureDateTime = departureDateTime;
-        this.arrivalDateTime = arrivalDateTime;
-        this.seatNumber = seatNumber;
-        this.price = price;
-        this.isCancelled = isCancelled;
+
+    public RegularTicket(String pnr,String from,String to,Flight flight,String departureDateTime,
+                         String arrivalDateTime, Passenger passenger, String seatNumber,
+                         float price,boolean isCancelled,String specialServices) {
+        super(pnr, from, to, flight, departureDateTime, arrivalDateTime, passenger, seatNumber, price, isCancelled);
         this.specialServices = specialServices;
     }
 
     public String checkStatus() {
-        if (isCancelled) {
+        if (getIsCancelled()) {
             return "Cancelled";
         } else {
             return "Confirmed";
@@ -31,10 +23,11 @@ public class RegularTicket {
     public int getFlightDuration(){
         return 24;
     }
-    public void cancel(){
-        isCancelled =true;
-    }
+    public void cancel(){getIsCancelled();}
 
+    public void setSpecialServices(String specialServices){
+        this.specialServices = specialServices;
+    }
     public  String getSpecialServices(){
         return this.specialServices;
     }
