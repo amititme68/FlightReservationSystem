@@ -28,6 +28,11 @@ public class Main {
                 amitKumar,"12",2000.0f,false,
               "Vagator Beach Bardez - Goa 403509 India",selectedTouristLocation);
 
+
+        printTicketDetails(tourTicket);
+
+        printTicketDetails(regTicket);
+
         System.out.println(nituPanjiyar.getPassengerCount());
         System.out.println(amitKumar.getAddressDetails());
         System.out.println(amitKumar.getContactDetails());
@@ -43,6 +48,11 @@ public class Main {
 
     }
 
-
+    public static void printTicketDetails(Ticket ticket){
+        System.out.println(ticket.getPnr());
     }
+
+
+
+}
 
