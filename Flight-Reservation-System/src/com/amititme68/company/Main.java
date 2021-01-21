@@ -30,8 +30,8 @@ public class Main {
 
 
         printTicketDetails(tourTicket);
-
         printTicketDetails(regTicket);
+
 
         System.out.println(nituPanjiyar.getPassengerCount());
         System.out.println(amitKumar.getAddressDetails());
@@ -44,9 +44,8 @@ public class Main {
         System.out.println(tourTicket.checkStatus());
         tourTicket.getFlightDuration();
         regTicket.getFlightDuration();
-
-
     }
+
 
     public static void printTicketDetails(Ticket ticket){
         System.out.println(ticket.getPnr());

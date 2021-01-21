@@ -32,8 +32,4 @@ public class TouristTicket extends Ticket {
                +selectedTouristLocation[2]+" "+selectedTouristLocation[3]+" "+selectedTouristLocation[4]);
    }
 
-
-
-
-
 }

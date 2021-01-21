@@ -19,7 +19,6 @@ public class Passenger {
 
 
     private static  class Contact {
-
         String name, phone, email;
 
         public Contact(String name, String phone, String email) {
@@ -38,7 +37,6 @@ public class Passenger {
         this.id = ++idCounter;
         this.address = new Address(addressStreet, addressCity, addressState);
         this.contact = new Contact(contactName, contactPhone, contactEmail);
-
     }
 
     public String getAddressDetails() {
@@ -53,7 +51,5 @@ public class Passenger {
 
      public int getPassengerCount(){
         return this.id;}
-
-
 
 }

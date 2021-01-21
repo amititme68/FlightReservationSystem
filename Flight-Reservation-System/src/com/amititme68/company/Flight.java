@@ -5,25 +5,22 @@ public class Flight {
     private String airLine;
     private int capacity;
     private int bookedSeats;
-
     private static int bookingCounter;
     private int bookingId;
 
 
     public Flight(String flightNumber, String airLine, int capacity,int bookedSeats) {
 
-
         this.flightNumber = flightNumber;
         this.airLine = airLine;
         this.capacity = capacity;
         this.bookedSeats = bookedSeats;
 
-    }static {
-        bookingCounter = 0;
     }
 
-
-
+    static {
+        bookingCounter = 0;
+    }
 
    public void setFlightNumber(String flightNumber){
         this.flightNumber =flightNumber;
@@ -46,10 +43,8 @@ public class Flight {
     public int getBookedSeats(){return bookedSeats;}
 
 
-
     public String getFlightDetails() {
-        return this.flightNumber + ", " + this.airLine +", "+ this.capacity + ", "+ this.bookedSeats;
-    }
+        return this.flightNumber + ", " + this.airLine +", "+ this.capacity + ", "+ this.bookedSeats; }
 
     public  boolean checkAvailability(){
         return true;
@@ -58,6 +53,5 @@ public class Flight {
     public void incrementBookingCounter(){
         this.bookingId = ++bookingCounter;
     }
-
 
 }
